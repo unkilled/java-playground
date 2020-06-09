@@ -3,13 +3,14 @@ package test.java.com.lxz.common.tools.singleflight;
 import main.java.com.lxz.common.tools.singleflight.SingleFlightResult;
 import org.junit.Test;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.function.Function;
-import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toMap;
 import static org.junit.Assert.*;
