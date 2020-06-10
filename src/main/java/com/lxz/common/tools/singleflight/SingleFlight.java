@@ -27,11 +27,15 @@ public class SingleFlight<T> {
             return new SingleFlightResult<>(call.result, call.dups.get() > 0);
         } else {
             c.dups.incrementAndGet();
+
+            // hold住，等共享结果
             try {
                 c.countDownLatch.await();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+
+            // 拿到结果
             return new SingleFlightResult<>(c.result, true);
         }
     }

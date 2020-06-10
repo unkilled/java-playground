@@ -78,7 +78,6 @@ public class SingleFlightTest {
         CompletableFuture.allOf(futures.toArray(new CompletableFuture<?>[0])).join();
 
         System.out.println(resultMap);
-
         assertEquals(concurrency, resultMap.size());
 
         for (int i = 0; i < concurrency; i++) {
