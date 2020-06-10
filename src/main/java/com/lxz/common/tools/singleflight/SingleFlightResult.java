@@ -1,5 +1,10 @@
 package main.java.com.lxz.common.tools.singleflight;
 
+/**
+ * SingleFlightResult
+ *
+ * @param <T>
+ */
 public class SingleFlightResult<T> {
     private final T result;
     private final Exception exception;

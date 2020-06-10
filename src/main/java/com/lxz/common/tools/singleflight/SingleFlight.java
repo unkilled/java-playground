@@ -6,6 +6,11 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
 
+/**
+ * SingleFlight
+ *
+ * @param <T>
+ */
 public class SingleFlight<T> {
     private final Map<String, Call<T>> callByKey;
 
@@ -19,6 +24,11 @@ public class SingleFlight<T> {
         return new SingleFlight<>();
     }
 
+    /**
+     * @param key            how you would like to share the results.
+     * @param resultSupplier your business logic
+     * @return the result
+     */
     public SingleFlightResult<T> run(String key, Supplier<T> resultSupplier) {
         // check if the 'key' is already being processed
         Call<T> c = callByKey.get(key);
