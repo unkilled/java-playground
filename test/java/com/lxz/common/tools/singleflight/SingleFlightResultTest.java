@@ -17,15 +17,15 @@ public class SingleFlightResultTest {
 
     @Test
     public void testToString1() {
-        systemUnderTest = new SingleFlightResult<>("haha", false);
+        systemUnderTest = new SingleFlightResult<>("haha", null, false);
         String str = systemUnderTest.toString();
-        assertEquals("SingleFlightResult{result=haha, shared=false}", str);
+        assertEquals("SingleFlightResult{result=haha, exception=null, shared=false}", str);
     }
 
     @Test
     public void testToString2() {
-        systemUnderTest = new SingleFlightResult<>("hehe", true);
+        systemUnderTest = new SingleFlightResult<>("hehe", new RuntimeException(), true);
         String str = systemUnderTest.toString();
-        assertEquals("SingleFlightResult{result=hehe, shared=true}", str);
+        assertEquals("SingleFlightResult{result=hehe, exception=java.lang.RuntimeException, shared=true}", str);
     }
 }
