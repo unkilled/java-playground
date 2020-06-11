@@ -1,6 +1,5 @@
-package test.java.com.lxz.common.tools.singleflight;
+package com.lxz.common.tools.singleflight;
 
-import main.java.com.lxz.common.tools.singleflight.SingleFlightResult;
 import org.junit.Before;
 import org.junit.Test;
 

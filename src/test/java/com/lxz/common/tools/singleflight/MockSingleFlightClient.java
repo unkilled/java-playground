@@ -1,12 +1,8 @@
-package test.java.com.lxz.common.tools.singleflight;
+package com.lxz.common.tools.singleflight;
 
-import main.java.com.lxz.common.tools.singleflight.SingleFlight;
-import main.java.com.lxz.common.tools.singleflight.SingleFlightResult;
-
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 
-public class MockSingleFlightClientException {
+public class MockSingleFlightClient {
     private final static SingleFlight<String> group = SingleFlight.newSingleFlightGroup();
 
     static SingleFlightResult<String> runWithSingleFlight(
@@ -19,12 +15,6 @@ public class MockSingleFlightClientException {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-            // throw an exception randomly
-            if (ThreadLocalRandom.current().nextInt() % 2 == 0) {
-                throw new RuntimeException("some exp");
-            }
-
             return "haha" + key;
         });
 

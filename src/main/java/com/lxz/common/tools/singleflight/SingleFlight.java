@@ -1,4 +1,4 @@
-package main.java.com.lxz.common.tools.singleflight;
+package com.lxz.common.tools.singleflight;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
